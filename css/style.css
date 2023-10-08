@@ -220,3 +220,58 @@ header {
   color: #000000;
   margin-bottom: 20px;
 }
+
+/* **********************コンタクト********************** */
+.contact-box {
+  width: 800px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.contact-address {
+  width: 400px;
+}
+
+.contact-address-content {
+  width: 130px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.contact-address-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.contact-address-title:nth-child(n+2) {
+  margin-top: 20px;
+}
+
+.contact-address-text {
+  font-size: 16px;
+  text-decoration: underline;
+  color: #000000;
+}
+
+.contact-sns-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.fa {
+  font-size: 50px;
+}
+
+.fa:nth-child(-n+3) {
+  margin-right: 20px;
+}
+
+.contact-sns {
+  width: 400px;
+}
+
+.contact-sns-content {
+  width: 200px;
+  text-align: left;
+  margin: 0 auto;
+}
