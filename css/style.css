@@ -5,6 +5,12 @@
 }
 
 /* ********************** 共通 ********************** */
+
+.contents {
+  padding: 90px 0;
+  text-align: center;
+}
+
 .heading {
   position: relative;
   top: 0;
@@ -97,16 +103,11 @@ header {
   background-color: #eceff1;
 }
 
-.portfolio-contents {
-  padding: 90px 0;
-  text-align: center;
-}
-
 .portfolio-images {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; /* 要素の横並び */
+  flex-wrap: wrap; /* 横並びを折り返す */
   width: 920px;
-  margin: 0 auto;
+  margin: 0 auto; /* 要素(ブロック)の中央寄せ */
 }
 
 .portfolio-img {
@@ -147,3 +148,33 @@ header {
   background-image: url(/img/webcamp-mother.png);
 }
 
+/* ***********************フィーチャー*********************** */
+.feature-box {
+  width: 980px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.strength {
+  width: 320px;
+}
+
+.strength:nth-child(-n+2) {
+  margin-right: 10px;
+}
+
+.strength-title {
+  font-size: 20px;
+  color: #000000;
+  margin: 10px 0;
+}
+
+.strength-text {
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+}
+
+.fa-solid {
+  font-size: 60px
+}
