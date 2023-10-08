@@ -275,3 +275,17 @@ header {
   text-align: left;
   margin: 0 auto;
 }
+
+/* ***********************フッター*********************** */
+.footer {
+  background-color: #ec715f;
+  height: 60px;
+  width: 100%;
+}
+
+.footer p {
+  font-size: 16px;
+  color: #fafafa;
+  line-height: 60px;
+  text-align: center;
+}
