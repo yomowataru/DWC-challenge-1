@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 /* ********************** 共通 ********************** */
 
 .contents {
@@ -38,40 +40,57 @@
 
 
 /* ********************** ヘッダー ********************** */
-header {
+
+.c-header {
+  align-items: center;
   background-color: #ec715f;
   width: 100%;
   height: 70px;
-}
-
-.header {
-  width: 1024px;
-  height: 70px;
-  margin: 0 auto;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between; /* display flex で横並びにした要素を両端揃えで配置する（ここでは、h1要素とnav要素）*/
+  justify-content: space-between;
+  padding: 1rem 7.5rem; 
 }
 
-.header img {
+.c-header__logo {
+  color: #000; /* カスタマイズしてください */
+  min-width: 80px; /* カスタマイズしてください */
+  text-decoration: none;
+}
+
+.c-header__logo img {
   height: 70px;
   object-fit: cover;
 }
 
-.nav {
+.c-header__list {
+  box-sizing: border-box;
   display: flex;
-  line-height: 70px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-list {
+.c-header__list-item {
   list-style: none;
-  font-size: 16px;
-  margin: 0 30px;
+  text-decoration: none;
 }
 
-.nav-list a {
-  text-decoration: none;
+.c-header__list-link {
   color: #fafafa;
+  display: block;
+  margin-right: 30px; 
+  text-decoration: none;
+  padding: 10px 0px; /* カスタマイズしてください */
 }
+
+.c-header__list-link:hover {
+  filter: opacity(0.6); /* カスタマイズしてください */
+}
+
+.c-hamburger-menu {
+  position: relative;
+}
+
 
 /* ***********************メインビジュアル*********************** */
 .main-visual {
@@ -288,4 +307,269 @@ header {
   color: #fafafa;
   line-height: 60px;
   text-align: center;
+}
+
+/* ***********************レスポンシブ*********************** */
+
+/* ハンバーガーメニュー ここから */
+@media screen and (max-width: 767px) {
+  .c-hamburger-menu__list {
+    background-color: #f88b7a; /* カスタマイズしてください */
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 2rem 10rem; /* カスタマイズしてください */
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 0.3s; /* カスタマイズしてください */
+    top: 100%;
+    width: 100%;
+  }
+
+  #hamburger:checked ~ .c-hamburger-menu__list {
+    transform: translateX(0%);
+    transition: 0.3s;
+  }
+}
+
+.c-hamburger-menu__input {
+  display: none;
+}
+
+.c-hamburger-menu__bg {
+  background-color: #000; /* カスタマイズしてください */
+  cursor: pointer;
+  display: none;
+  height: 100vh;
+  left: 0;
+  opacity: 0.4; /* カスタマイズしてください */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#hamburger:checked ~ .c-hamburger-menu__bg {
+  display: block;
+}
+
+.c-hamburger-menu__button {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .c-hamburger-menu__button {
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* カスタマイズしてください */
+    height: 32px; /* カスタマイズしてください */
+    justify-content: center;
+    width: 32px; /* カスタマイズしてください */
+  }
+}
+
+.c-hamburger-menu__button-mark {
+  background-color: #000; /* カスタマイズしてください */
+  display: block;
+  height: 1px; /* カスタマイズしてください */
+  transition: 0.3s; /* カスタマイズしてください */
+  width: 20px; /* カスタマイズしてください */
+}
+
+@media screen and (max-width: 767px) {
+  #hamburger:checked
+    ~ .c-hamburger-menu__button
+    .c-hamburger-menu__button-mark:nth-of-type(1) {
+    transform: translate(2px, 1px) rotate(45deg); /* カスタマイズしてください */
+    transform-origin: 0%; /* カスタマイズしてください */
+  }
+  #hamburger:checked
+    ~ .c-hamburger-menu__button
+    .c-hamburger-menu__button-mark:nth-of-type(2) {
+    opacity: 0;
+  }
+  #hamburger:checked
+    ~ .c-hamburger-menu__button
+    .c-hamburger-menu__button-mark:nth-of-type(3) {
+    transform: translate(2px, 3px) rotate(-45deg); /* カスタマイズしてください */
+    transform-origin: 0%; /* カスタマイズしてください */
+  }
+}
+/* ここまで */
+
+/* その他 ここから */
+@media screen and (max-width: 767px) {
+  /* メインビジュアル */
+  .main-visual {
+    background-image: url(/img/code.png);
+    width: 100%;
+    height: 650px;
+  }
+
+  .main-visual-contents {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .main-visual-heading {
+    font-size: 40px;
+    color: #fafafa;
+    margin-bottom: 10px;
+  }
+
+  .main-visual-text {
+    font-size: 18px;
+    color: #fafafa;
+  }
+
+  /* ポートフォリオ */
+  .contents {
+    width: 90%;
+    margin: 0 auto;
+    padding: 90px 0;
+  }
+
+  .portfolio-images {
+    display: block; 
+    margin: 0 auto; /* 要素(ブロック)の中央寄せ */
+    width: 100%;
+  }
+  
+  .portfolio-img {
+    background-position: center center;
+    background-size: cover;
+    width: 300px;
+    height: 250px;
+  }
+  
+  .img1 {
+    display: none;
+  }
+  
+  .img2 {
+    background-image: url(/img/websuku.png);
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .img3 {
+    display: none;
+  }
+  
+  .img4 {
+    background-image: url(/img/webcamp.png);
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .img5 {
+    display: none;
+  }
+  
+  .img6 {
+    background-image: url(/img/webcamp-mother.png);
+    margin: 0 auto;
+  }
+
+  /* フィーチャー */  
+  .strength {
+    width: 320px;
+  }
+  
+  .strength:nth-child(-n+2) {
+    margin-right: 10px;
+  }
+  .feature-box {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .strength {
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .fa-solid {
+    font-size: 50px
+  }
+
+  /* プロフィール */
+  .profile-box {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .profile-image-box {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .profile-image {
+    background-image: url(/img/my-icon.jpg);
+    width: 250px;
+    height: 250px;
+    border-radius:50%;
+    margin: 0 auto;
+    /* background-position: center; */
+  }
+  
+  .profile-message {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-message-title {
+    margin-top: 20px;
+  }
+
+  /* コンタクト */
+  .contact-box {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .contact-address {
+    width: 100%;
+  }
+  
+  .contact-address-content {
+    width: 130px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .contact-address-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .contact-address-title:nth-child(n+2) {
+    margin-top: 0px;
+  }
+
+  .contact-address-text {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .contact-sns {
+    width: 100%;
+  }
+  
+  .contact-sns-content {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
 }

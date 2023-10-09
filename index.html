@@ -7,7 +7,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/1f27aa4067.js" crossorigin="anonymous"></script>
     <!-- リセットCSS -->
-    <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css"> -->
     <!-- CSS読み込み -->
     <link rel="stylesheet" href="css/style.css">
     <!-- ファビコン -->
@@ -18,18 +18,29 @@
   </head>
 
   <body>
-    <header>
-      <div class="header">
-        <h1><a href="#mv"><img src="img/logo.png" alt="ロゴ"></a></h1>
-        <nav>
-          <ul class="nav">
-            <li class="nav-list"><a href="#portfolio">Portfolio</a></li>
-            <li class="nav-list"><a href="#feature">Feature</a></li>
-            <li class="nav-list"><a href="#profile">Profile</a></li>
-            <li class="nav-list"><a href="#contact">Content</a></li>
-          </ul>
-        </nav> 
-      </div>   
+    <header class="c-header c-hamburger-menu"><!-- 追記 クラスを追記 -->
+      <a href="#mv" class="c-header__logo"><img src="img/logo.png" alt="ロゴ"></a>
+      <input type="checkbox" name="hamburger" id="hamburger" class="c-hamburger-menu__input"/><!-- 追記 idはlabelのforと同じにする -->
+      <label for="hamburger" class="c-hamburger-menu__bg"></label><!-- 追記 ハンバーガーメニュを開いた時の背景 -->
+      <ul class="c-header__list c-hamburger-menu__list"><!-- 追記 クラスを追記 -->
+        <li class="c-header__list-item">
+          <a href="#portfolio" class="c-header__list-link">Portfolio</a>
+        </li>
+        <li class="c-header__list-item">
+          <a href="#feature" class="c-header__list-link">Feature</a>
+        </li>
+        <li class="c-header__list-item">
+          <a href="#profile" class="c-header__list-link">Profile</a>
+        </li>
+        <li class="c-header__list-item">
+          <a href="#contact" class="c-header__list-link">Content</a>
+        </li>
+      </ul>
+      <label for="hamburger" class="c-hamburger-menu__button"><!-- 追記 ハンバーガーメニューのボタン -->
+        <span class="c-hamburger-menu__button-mark"></span>
+        <span class="c-hamburger-menu__button-mark"></span>
+        <span class="c-hamburger-menu__button-mark"></span>
+      </label>
     </header>
 
     <main>
